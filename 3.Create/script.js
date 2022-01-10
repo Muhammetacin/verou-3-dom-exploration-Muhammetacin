@@ -5,9 +5,9 @@ console.log("Exercise 1");
 let article = document.getElementsByTagName('article')[0];
 console.log(article);
 
-const randomColor = 'rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')';
-
 function addNewLearner(name) {
+    const randomColor = 'rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')';
+
     const sectionParent = document.createElement("section");
     sectionParent.style.backgroundColor = randomColor;
 
@@ -20,6 +20,8 @@ function addNewLearner(name) {
 }
 
 addNewLearner('Muhammet Cin');
+addNewLearner('Falador Massacre');
+addNewLearner('User 2');
 
 
 
