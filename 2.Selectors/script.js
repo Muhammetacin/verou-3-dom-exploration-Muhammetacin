@@ -52,3 +52,16 @@ const paragraphs = document.querySelectorAll('p').forEach(function(elem) {
 
 
 
+// Ex.4: Give each of the paragraph a random text color (different for each one) UNLESS it has a class then leave it as it is.
+console.log("Exercise 4");
+
+const randomColorsWithNoClass = document.querySelectorAll('p').forEach(function(elem) {
+    // Logging in console to see how the code works. Returns the p if it has class together with class name, otherwise 'No class'
+    console.log(elem.classList.length == 0 ? "No class" : elem.innerHTML + " -> " + elem.className);
+
+    if(elem.classList.length == 0) {
+        // Generates random color for each paragraph p with no class
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        elem.style.color = '#' + randomColor;
+    }
+});
