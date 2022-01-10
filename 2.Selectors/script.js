@@ -8,13 +8,13 @@ console.log(importants);
 
 // Testing if I can grab and add title to a single element
 // and print the result in the console
-// importants[0].title = "This is an important item";
+// importants[0].setAttribute("title, This is an important item");
 // console.log(importants[0]);
 
 // Loop through all elements in importants (every element with .important class)
 // and add title to these elements and print them in the console
 for (let elem = 0; elem < importants.length; elem++) {
-    importants[elem].title = "This is an important item";
+    importants[elem].setAttribute("title, This is an important item");
     console.log("Printing element that has a title...");
     console.log(importants[elem]);
 }
