@@ -2,7 +2,8 @@
 //       This section should contain a paragraph with the name of the learner. Those sections should be appended in the <article>
 console.log("Exercise 1");
 
-let article = document.getElementsByTagName('article')[0];
+// let article = document.getElementsByTagName('article')[0];
+article = document.querySelector('article');
 console.log(article);
 
 function addNewLearner(name) {
@@ -49,4 +50,18 @@ function addNewLearnerWithLighterColor(name) {
     article.appendChild(sectionParent);
 }
 
-addNewLearnerWithLighterColor("Random boii")
+addNewLearnerWithLighterColor("Random boii");
+addNewLearnerWithLighterColor("Random boii jsdfnozef");
+addNewLearnerWithLighterColor("Random boii k,sd,fozazgoqognqsd");
+addNewLearnerWithLighterColor("Random boii oinFON FEFJNZzef F  SQONFQOSN");
+
+
+
+// Ex.3: Find a way so that everytime you load the page the order of the elements changes!
+// console.log("Exercise 3");
+
+// let sections = article.querySelectorAll('section');
+// sections.forEach(function(elem) {
+//     // elem.style.order = Math.floor(Math.random() * sections.length);
+//     console.log(elem.style.order = 1);
+// });
