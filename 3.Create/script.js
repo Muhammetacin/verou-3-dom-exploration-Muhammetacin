@@ -58,10 +58,10 @@ addNewLearnerWithLighterColor("Random boii oinFON FEFJNZzef F  SQONFQOSN");
 
 
 // Ex.3: Find a way so that everytime you load the page the order of the elements changes!
-// console.log("Exercise 3");
+console.log("Exercise 3");
 
-// let sections = article.querySelectorAll('section');
-// sections.forEach(function(elem) {
-//     // elem.style.order = Math.floor(Math.random() * sections.length);
-//     console.log(elem.style.order = 1);
-// });
+let sections = article.querySelectorAll('section');
+for (let i = 0; i < sections.length; i++) {
+    article.appendChild(sections[Math.floor(Math.random() * sections.length)]);
+    console.log(sections[i]);
+}
