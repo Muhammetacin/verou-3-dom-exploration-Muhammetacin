@@ -22,12 +22,37 @@ function addNewLearner(name) {
     article.appendChild(sectionParent);
 }
 
-addNewLearner('Muhammet Cin');
+addNewLearner('Muhammet Cin -> Without background color checking function');
 
 
 
 // Ex.2: If the background is dark the text should be white, if the background is light the text should be black
 console.log("Exercise 2");
+
+const names = [
+    "Ahmad",
+    "Jian",
+    "Michael",
+    "Dante",
+    "Muhammet",
+    "Nicolas",
+    "Beryl",
+    "Cynthia",
+    "Ruben",
+    "Magali",
+    "Jawid",
+    "Koen",
+    "Kevin",
+    "Benjamin",
+    "Dery",
+    "Michelle",
+    "Colin",
+    "Feruz",
+    "Pierter",
+    "Ellen",
+    "Sara",
+    "Jordy"
+];
 
 function addNewLearnerWithLighterColor(name) {
     const r = Math.floor(Math.random() * 255), g = Math.floor(Math.random() * 255), b = Math.floor(Math.random() * 255);
@@ -50,10 +75,9 @@ function addNewLearnerWithLighterColor(name) {
     article.appendChild(sectionParent);
 }
 
-addNewLearnerWithLighterColor("Random boii");
-addNewLearnerWithLighterColor("Random boii jsdfnozef");
-addNewLearnerWithLighterColor("Random boii k,sd,fozazgoqognqsd");
-addNewLearnerWithLighterColor("Random boii oinFON FEFJNZzef F  SQONFQOSN");
+names.forEach((learner) => {
+    addNewLearnerWithLighterColor(learner);
+});
 
 
 
