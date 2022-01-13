@@ -117,6 +117,10 @@ function deleteSquares(e) {
   }
 }
 
+
+
+/*** HELPER FUNCTIONS ***/ 
+
 // To change the color of text when background color is too dark
 function isLightOrDark(red, green, blue) {
   // Variables for red, green, blue values
