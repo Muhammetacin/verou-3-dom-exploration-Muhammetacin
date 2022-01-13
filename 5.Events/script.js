@@ -26,6 +26,11 @@ function createColoredBox(e) {
   }
 
   sectionWithBoxes.appendChild(divSquare);
+
+  // TODO: Ex. 3: Create a system so that when a user clicks on a generated square an alert pops-up with the color of that square
+  divSquare.addEventListener("click", function() {
+    alert("This square is " + this.classList[1].toUpperCase() + ".");
+  });
 }
 
 // TODO: Ex.1.2: Create a new <li> in the log below to state when the action was done
@@ -81,20 +86,9 @@ function logSpacebar() {
 }
 
 // TODO: Ex. 2.3: When the l key is pressed the log gets deleted (erases the generated <li>s)
+
+
 // TODO: Ex. 2.4: When the s key is pressed the squares get deleted (erases the generated squares)
-
-// TODO: Ex. 3: Create a system so that when a user clicks on a generated square an alert pops-up with the color of that square
-
-// function alertColoredBox(e) {
-//   // select every box that are dynamically created
-//   const generatedSquares = document.querySelectorAll(".createdBox");
-//   console.log(generatedSquares[e.classList[2]]);
-// }
-
-// for (let createdsquare of createdSquares) {
-//   createdsquare.addEventListener("click", alertColoredBox);
-// }
-
 
 
 // To change the color of text when background color is too dark
