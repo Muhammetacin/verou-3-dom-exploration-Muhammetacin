@@ -4,11 +4,6 @@ function getElapsedTime() {
   return Number((Date.now() - _initTime) / 1000).toFixed(2) + "s";
 }
 
-function clickOnSquare(e) {
-  console.log(e.target.classList[1]);
-  console.log(getElapsedTime());
-}
-
 const actionsquares = document.querySelectorAll(".actionsquare");
 for (let actionsquare of actionsquares) {
   actionsquare.addEventListener("click", clickOnSquare);
@@ -17,7 +12,6 @@ for (let actionsquare of actionsquares) {
 
 // TODO: Ex.1: Create a new <div> with a class .displayedsquare and the corresponding clicked color in the div above (.displayedsquare-wrapper)
 const sectionWithBoxes = document.querySelector("section:first-child");
-console.log(sectionWithBoxes);
 
 function createColoredBox(e) {
   let divSquare = document.createElement("div");
@@ -35,3 +29,17 @@ function createColoredBox(e) {
 }
 
 // TODO: Ex.2: Create a new <li> in the log below to state when the action was done
+const sectionWithLogs = document.querySelector("ul");
+
+function clickOnSquare(e) {
+  // console.log(e.target.classList[1]);
+  // console.log(getElapsedTime());
+  let logItem = document.createElement("li");
+
+  const logColor = e.target.classList[1];
+  const logTime = getElapsedTime();
+
+  logItem.appendChild(document.createTextNode("[" + logTime + "] " + "Created a new " + logColor + " square"));
+  
+  sectionWithLogs.appendChild(logItem);
+}
