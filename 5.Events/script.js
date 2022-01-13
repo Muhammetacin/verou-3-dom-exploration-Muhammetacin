@@ -57,39 +57,57 @@ function clickOnSquare(e) {
 const body = document.querySelector("body");
 body.addEventListener("keypress", hitSpacebar);
 body.addEventListener("keypress", logSpacebar);
+body.addEventListener("keypress", deleteLogs);
+body.addEventListener("keypress", deleteSquares);
 
 // TODO: Ex. 2.1: When the spacebar is hit randomly change the background color of the whole page
-function hitSpacebar() {
+function hitSpacebar(e) {
   const randomValueR = Math.floor(Math.random() * 255),
     randomValueG = Math.floor(Math.random() * 255),
     randomValueB = Math.floor(Math.random() * 255);
   const randomColor =
     "rgb(" + randomValueR + ", " + randomValueG + ", " + randomValueB + ")";
-  body.style.backgroundColor = randomColor;
 
-  isLightOrDark(randomValueR, randomValueG, randomValueB);
+  if(e.which === 32) {
+    body.style.backgroundColor = randomColor;
+    isLightOrDark(randomValueR, randomValueG, randomValueB);
+  }
 }
 
 // TODO: Ex. 2.2: Log when the spacebar is used the same way you used for the generated squares.
-function logSpacebar() {
+function logSpacebar(e) {
   let logSpacebarValue = document.createElement("li");
   const bgColor = document.body.style.backgroundColor;
   const logTime = getElapsedTime();
 
-  logSpacebarValue.appendChild(
-    document.createTextNode(
-      "[" + logTime + "] " + "Changed background color to: " + bgColor
-    .toUpperCase())
-  );
-
-  sectionWithLogs.appendChild(logSpacebarValue);
+  if(e.which === 32) {
+    logSpacebarValue.appendChild(
+      document.createTextNode(
+        "[" + logTime + "] " + "Changed background color to: " + bgColor
+      .toUpperCase())
+    );
+  
+    sectionWithLogs.appendChild(logSpacebarValue);
+  }
 }
 
 // TODO: Ex. 2.3: When the l key is pressed the log gets deleted (erases the generated <li>s)
-
+function deleteLogs(e) {
+  if(e.code === 'KeyL') {
+    while (sectionWithLogs.lastElementChild) {
+      sectionWithLogs.removeChild(sectionWithLogs.lastElementChild);
+    }
+  }
+}
 
 // TODO: Ex. 2.4: When the s key is pressed the squares get deleted (erases the generated squares)
-
+function deleteSquares(e) {
+  if(e.code === 'KeyS') {
+    while (sectionWithBoxes.lastElementChild) {
+      sectionWithBoxes.removeChild(sectionWithBoxes.lastElementChild);
+    }
+  }
+}
 
 // To change the color of text when background color is too dark
 function isLightOrDark(red, green, blue) {
