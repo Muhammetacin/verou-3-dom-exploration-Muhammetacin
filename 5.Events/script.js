@@ -97,6 +97,10 @@ function deleteLogs(e) {
     while (sectionWithLogs.lastElementChild) {
       sectionWithLogs.removeChild(sectionWithLogs.lastElementChild);
     }
+
+    // Reset background color and text color
+    body.style.backgroundColor = "#FFF";
+    body.style.color = "#000";
   }
 }
 
@@ -106,6 +110,10 @@ function deleteSquares(e) {
     while (sectionWithBoxes.lastElementChild) {
       sectionWithBoxes.removeChild(sectionWithBoxes.lastElementChild);
     }
+
+    // Reset background color and text color
+    body.style.backgroundColor = "#FFF";
+    body.style.color = "#000";
   }
 }
 
