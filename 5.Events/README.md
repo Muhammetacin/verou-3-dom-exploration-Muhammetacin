@@ -4,7 +4,7 @@ Link to my solution: <https://gracious-swartz-c476db.netlify.app/>
 
 ## What is an event?
 
-Any action that is triggered by the user is called an event. 
+Any action that is triggered by the user is called an event.
 
 ## The 3 key elements of an event
 
@@ -22,19 +22,18 @@ An event is always triggered by an action, it could be anything ranging from :
 
 [and many, many more...](https://developer.mozilla.org/en-US/docs/Web/Events)
 
-### The target 
+### The target
 
 The target is the element that will receive the action. Could be the body of the page, could be the a button, could be a form field such as a text input, etc. Really anything that is displayed on the page, whether it is there at page load or generated using Javascript could be a target
-
 
 ### The callback
 
 The callback is the consequence of the event, it's a function that will be executed once an action is triggered on a target.
 
-
 ### An example is worth a thousand words
 
 Let say we want to display an "alert" whenever a button is clicked. We will have a :
+
 - trigger: **a mouseclick**
 - target: **a button**
 - callback: **displaying an alert**
@@ -46,6 +45,7 @@ Suppose we have the following HTML code:
 ```
 
 We can achieve this with the following javascript code:
+
 ```javascript
 // We select the button
 const button = document.querySelector('button')
@@ -64,10 +64,10 @@ button.addEventListener(
 
 There is a thousand more things we can explore with events but let's explore the new possibilities we have now.
 
-
 ## Exercises
 
 Open the [script.js](./script.js) file and edit it, so that:
+
 - Everytime the user clicks on one of the action squares
   - Create a new `<div>` with a class `.displayedsquare` and the corresponding clicked color in the div above (`.displayedsquare-wrapper`)
   - Create a new `<li>` in the log below to state when the action was done
