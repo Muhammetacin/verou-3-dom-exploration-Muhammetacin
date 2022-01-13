@@ -1,16 +1,37 @@
-const _initTime = Date.now()
+const _initTime = Date.now();
 
-function getElapsedTime(){
-  return Number((Date.now() - _initTime) / 1000).toFixed(2) + 's'
+function getElapsedTime() {
+  return Number((Date.now() - _initTime) / 1000).toFixed(2) + "s";
 }
 
-function clickOnSquare(e){
-  console.log(e.target.classList[1])
-  console.log(getElapsedTime())
+function clickOnSquare(e) {
+  console.log(e.target.classList[1]);
+  console.log(getElapsedTime());
 }
 
-const actionsquares = document.querySelectorAll('.actionsquare')
-for(let actionsquare of actionsquares){
-  actionsquare.addEventListener('click', clickOnSquare)
+const actionsquares = document.querySelectorAll(".actionsquare");
+for (let actionsquare of actionsquares) {
+  actionsquare.addEventListener("click", clickOnSquare);
+  actionsquare.addEventListener("click", createColoredBox);
 }
 
+// TODO: Ex.1: Create a new <div> with a class .displayedsquare and the corresponding clicked color in the div above (.displayedsquare-wrapper)
+const sectionWithBoxes = document.querySelector("section:first-child");
+console.log(sectionWithBoxes);
+
+function createColoredBox(e) {
+  let divSquare = document.createElement("div");
+  divSquare.classList.add("actionsquare");
+
+  if (e.target.classList.contains("orange")) {
+    divSquare.classList.add("orange");
+  } else if (e.target.classList.contains("green")) {
+    divSquare.classList.add("green");
+  } else {
+    divSquare.classList.add("violet");
+  }
+
+  sectionWithBoxes.appendChild(divSquare);
+}
+
+// TODO: Ex.2: Create a new <li> in the log below to state when the action was done
