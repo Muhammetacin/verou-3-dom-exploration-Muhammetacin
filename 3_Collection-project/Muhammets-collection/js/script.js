@@ -31,7 +31,9 @@ searchBar.onkeyup = function () {
   // console.log(cardTitles);
   cardTitles.forEach((el) => {
     let elementItemTitle = el.children[0].children[1].children[0].innerHTML;
-    if (elementItemTitle.toLowerCase().includes(input)) {
+    let elementItemType = el.children[0].children[1].children[2].children[0].innerHTML;
+    
+    if (elementItemTitle.toLowerCase().includes(input) || elementItemType.toLowerCase().includes(input)) {
       el.style.display = "block";
       el.classList.add("d-flex");
     } else {
@@ -142,3 +144,11 @@ item.forEach((item) => {
   cardButton.target = "_blank";
   cardButtonContainer.appendChild(cardButton);
 });
+
+
+
+// EXTRA: adding favicon to page
+const link = document.createElement("link");
+link.rel = "icon";
+link.href = item[0].image;
+document.getElementsByTagName("head")[0].appendChild(link);
