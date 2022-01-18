@@ -23,7 +23,7 @@ const ageInput = document.getElementById('age');
 const displayHardTruth = document.getElementById('a-hard-truth');
 
 const getAge = () => {
-    if(ageInput.value > 18) {
+    if(ageInput.value > 17) {
         displayHardTruth.style.visibility = "visible";
     }
     else {
