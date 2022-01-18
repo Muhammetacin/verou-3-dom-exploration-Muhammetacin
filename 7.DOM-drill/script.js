@@ -27,12 +27,17 @@ for(let i = 1; i < childNodesFromList.length; i += 2) {
         });
     }
 
+    // TODO: (*) Remove duplicates using removeChild (duplicates are items with the exact same textContent, isEqualNode might be useful).
+    // for (let item of childNodesFromList) {
+    //     if(childNodesFromList[i].isEqualNode(item)) {
+    //         console.log(childNodesFromList[i]);
+    //     }
+    // }
+
     // Add an eventListener on every item of the list. If the item is clicked an alert() pops up to display the name of clicked element
     childNodesFromList[i].addEventListener("click", (event) => {
         alert(event.target.innerHTML);
     });
-
-    
 
     nrOfItems++
 }
@@ -43,13 +48,31 @@ for(let i = 1; i < childNodesFromList.length; i += 2) {
 //         console.log(child);
 //     }
 // }
-// TODO: (*) Remove duplicates using removeChild (duplicates are items with the exact same textContent, isEqualNode might be useful).
+
 
 
 
 
 // TODO: (*) Add an eventListener on the document body, listening for keyup. When pressing the r key of the keyboard the list should get sorted in a random order, however Fast and Furious should remain the first element (most important franchise ever, remember?)
 // TODO: (*) Modify the previous function so that when you press the letter d of your keyboard, the Fast and Furious element gets cloned
-// TODO: Create a new <div> before the list, using createElement and insertBefore
-// TODO: Using createElement, create a <select> tag into the previously created <div>, with two <option>s in it: "important franchises" and "normal franchises"
+// Create a new <div> before the list, using createElement and insertBefore
+const newDiv = document.createElement('div');
+const uList = document.querySelector('ul');
+
+document.body.insertBefore(newDiv, uList);
+
+
+
+// Using createElement, create a <select> tag into the previously created <div>, with two <option>s in it: "important franchises" and "normal franchises"
+const selectFranchises = document.createElement('select');
+const importantFranchises = document.createElement('option');
+const normalFranchises = document.createElement('option');
+
+importantFranchises.appendChild(document.createTextNode("Important Franchises"));
+normalFranchises.appendChild(document.createTextNode("Normal Franchises"));
+selectFranchises.appendChild(importantFranchises);
+selectFranchises.appendChild(normalFranchises);
+newDiv.appendChild(selectFranchises);
+
+
 // TODO: Add an eventListener to the <select>, on change, if the option "important franchise" is chosen, only display items of the list that have the class .important. (hint: you can toggle visibility using element.style.visibility = 'hidden')
