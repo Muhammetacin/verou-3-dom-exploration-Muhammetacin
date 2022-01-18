@@ -51,10 +51,6 @@ for(let i = 1; i < childNodesFromList.length; i += 2) {
 
 
 
-
-
-// TODO: (*) Add an eventListener on the document body, listening for keyup. When pressing the r key of the keyboard the list should get sorted in a random order, however Fast and Furious should remain the first element (most important franchise ever, remember?)
-// TODO: (*) Modify the previous function so that when you press the letter d of your keyboard, the Fast and Furious element gets cloned
 // Create a new <div> before the list, using createElement and insertBefore
 const newDiv = document.createElement('div');
 const uList = document.querySelector('ul');
@@ -75,4 +71,21 @@ selectFranchises.appendChild(normalFranchises);
 newDiv.appendChild(selectFranchises);
 
 
-// TODO: Add an eventListener to the <select>, on change, if the option "important franchise" is chosen, only display items of the list that have the class .important. (hint: you can toggle visibility using element.style.visibility = 'hidden')
+// Add an eventListener to the <select>, on change, if the option "important franchise" is chosen, only display items of the list that have the class .important. (hint: you can toggle visibility using element.style.visibility = 'hidden')
+selectFranchises.addEventListener('change', (event) => {
+    if(event.target.value === "Important Franchises") {
+        for(let i of uList.children) {
+            i.classList.contains('important') ? i.style.visibility = "visible" : i.style.visibility = "hidden";
+        }
+    }
+    else if(event.target.value === "Normal Franchises") {
+        for(let i of uList.children) {
+            !i.classList.contains('important') ? i.style.visibility = "visible" : i.style.visibility = "hidden";
+        }
+    }
+});
+
+
+
+// TODO: (*) Add an eventListener on the document body, listening for keyup. When pressing the r key of the keyboard the list should get sorted in a random order, however Fast and Furious should remain the first element (most important franchise ever, remember?)
+// TODO: (*) Modify the previous function so that when you press the letter d of your keyboard, the Fast and Furious element gets cloned
