@@ -1,6 +1,6 @@
 /*** 
  * Add a keyup listener on the first input field, so that once you type a letter in this field, 
- * it goes into the <span id="display-firstname">. 
+ * it goes into the <span id="display-firstname">.
  * The content of the field and the span should always remain the same. 
  */
 const firstNameInput = document.getElementById('firstname');
@@ -34,12 +34,35 @@ const getAge = () => {
 ageInput.addEventListener('keyup', getAge);
 
 
+
 /*** 
  * Well this is a common one. Add a keyup listener on both fields and show a visual hint 
  * (for instance turn the field red) if the password is too short (less than 6 characters) 
  * or if the password and its confirmation do not match.
  */ 
+const passwordInput = document.getElementById('pwd');
+const passwordRepeatInput = document.getElementById('pwd-confirm');
 
+const correctPwd = () => {
+    if(passwordInput.value.length < 6) {
+        passwordInput.style.backgroundColor = "hsl(348, 100%, 61%)";
+    }
+    else {
+        passwordInput.style.backgroundColor = "hsl(171, 100%, 41%)";
+    }
+
+    if(passwordRepeatInput.value != 0) {
+        if(passwordRepeatInput.value != passwordInput.value) {
+            passwordRepeatInput.style.backgroundColor = "hsl(348, 100%, 61%)";
+        } 
+        else {
+            passwordRepeatInput.style.backgroundColor = "hsl(171, 100%, 41%)";
+        }
+    }
+}
+
+passwordInput.addEventListener('keyup', correctPwd);
+passwordRepeatInput.addEventListener('keyup', correctPwd);
 
 
 
