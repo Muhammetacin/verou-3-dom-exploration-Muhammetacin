@@ -8,9 +8,12 @@ const childNodesFromList = document.querySelector('ul').childNodes;
 let nrOfItems = 0;
 
 for(let i = 1; i < childNodesFromList.length; i += 2) {   
-    // TODO: Find the element that contains Fast and Furious. If it's not the first element move it to the top of the list
+    // Find the element that contains Fast and Furious. If it's not the first element move it to the top of the list
     if(childNodesFromList[i].innerHTML === "Fast and Furious" && nrOfItems != 0) {
-        childNodesFromList[i].parentNode.insertBefore(childNodesFromList[i], childNodesFromList[0]);
+        const fastFurious = childNodesFromList[i];
+        fastFurious.parentNode.insertBefore(fastFurious, childNodesFromList[0]);
+        // TODO: Since Fast and Furious is the most important franchise ever, add a class .important to the element
+        fastFurious.classList.add("important");
     }
     nrOfItems++
 }
@@ -28,7 +31,7 @@ for(let i = 1; i < childNodesFromList.length; i += 2) {
 
 
 
-// TODO: Since Fast and Furious is the most important franchise ever, add a class .important to the element
+
 // TODO: Add an eventListener on every item of the list. If the item is clicked an alert() pops up to display the name of clicked element
 // TODO: Add a special condition to the previous function if the clicked item is Fast and Furious the alert() should display The most important franchise ever, the story of DOM(inic) Toretto's family. It's not about car, it's about family.
 // TODO: (*) Remove duplicates using removeChild (duplicates are items with the exact same textContent, isEqualNode might be useful).
