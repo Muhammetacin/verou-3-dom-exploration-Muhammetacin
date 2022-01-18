@@ -3,7 +3,7 @@
  * it goes into the <span id="display-firstname">. 
  * The content of the field and the span should always remain the same. 
  */
-const firstNameInputForm = document.getElementById('firstname');
+const firstNameInput = document.getElementById('firstname');
 const firstNameDisplay = document.getElementById('display-firstname');
 
 const getFirstName = (event) => {
