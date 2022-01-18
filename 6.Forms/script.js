@@ -70,3 +70,16 @@ passwordRepeatInput.addEventListener('keyup', correctPwd);
  * Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. 
  * For ease of use, we'll say that the dark mode is just turning the background black and the text white.
  */ 
+const darkModeToggle = document.getElementById('toggle-darkmode');
+let documentBody = document.body;
+
+darkModeToggle.addEventListener('change', (event) => {
+    if(event.target.value === "dark") {
+        documentBody.style.backgroundColor = "#111";
+        documentBody.style.color = "#EEE";
+    }
+    if(event.target.value === "light") {
+        documentBody.style.backgroundColor = "#FFF";
+        documentBody.style.color = "#111";
+    }
+});
