@@ -32,6 +32,7 @@ const getAge = () => {
 }
 
 ageInput.addEventListener('keyup', getAge);
+ageInput.addEventListener('change', getAge);
 
 
 
