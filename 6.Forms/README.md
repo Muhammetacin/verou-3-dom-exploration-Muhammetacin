@@ -2,6 +2,7 @@
 
 Did you know that you can create forms using HTML (or your secret javascript-ninja DOM techniques) ? Some events are especially useful when working with forms. Here are several challenges, common use cases, that you'll have to solve using DOM events.
 
+Link to working exercise: <https://jolly-poincare-b1f78e.netlify.app/>
 ## Exercises
 
 As always you should NOT edit the **index.html**, modify the [script.js](./script.js) file :
