@@ -6,11 +6,11 @@
 const firstNameInput = document.getElementById('firstname');
 const firstNameDisplay = document.getElementById('display-firstname');
 
-const getFirstName = (event) => {
-    firstNameDisplay.innerHTML = firstNameInputForm.value;
+const getFirstName = () => {
+    firstNameDisplay.innerHTML = firstNameInput.value;
 }
 
-firstNameInputForm.addEventListener('keyup', getFirstName);
+firstNameInput.addEventListener('keyup', getFirstName);
 
 
 
@@ -19,8 +19,19 @@ firstNameInputForm.addEventListener('keyup', getFirstName);
  * so that if the age is below 18 the content of the section a-hard-truth remains hidden, 
  * otherwise show them this hard to swallow fact.
  */
+const ageInput = document.getElementById('age');
+const displayHardTruth = document.getElementById('a-hard-truth');
 
+const getAge = () => {
+    if(ageInput.value < 18) {
+        displayHardTruth.style.visibility = "visible";
+    }
+    else {
+        displayHardTruth.style.visibility = "hidden";
+    }
+}
 
+ageInput.addEventListener('keyup', getAge);
 
 
 /*** 
